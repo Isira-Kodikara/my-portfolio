@@ -27,34 +27,58 @@ export default function Contact() {
     '$20,000+'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.description) return;
 
     setIsSubmitting(true);
 
-    // Simulate standard latency of contact submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitSuccess(true);
-      setShowToast(true);
-      setFormData((prev) => ({
-        ...prev,
-        name: '',
-        email: '',
-        description: ''
-      }));
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          message: formData.description,
+        }),
+      });
 
-      // Clear success indicator after 5 seconds
-      setTimeout(() => {
-        setIsSubmitSuccess(false);
-      }, 5000);
+      const result = await response.json();
       
-      // Auto-hide toast after 4.5 seconds
-      setTimeout(() => {
-        setShowToast(false);
-      }, 4500);
-    }, 1200);
+      if (result.success) {
+        setIsSubmitSuccess(true);
+        setShowToast(true);
+        setFormData((prev) => ({
+          ...prev,
+          name: '',
+          email: '',
+          description: ''
+        }));
+
+        // Clear success indicator after 5 seconds
+        setTimeout(() => {
+          setIsSubmitSuccess(false);
+        }, 5000);
+        
+        // Auto-hide toast after 4.5 seconds
+        setTimeout(() => {
+          setShowToast(false);
+        }, 4500);
+      } else {
+        console.error("Form submission error", result);
+        alert("Failed to send message. Please check your configuration.");
+      }
+    } catch (error) {
+      console.error("Network error", error);
+      alert("Network error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
