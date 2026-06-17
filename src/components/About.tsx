@@ -5,19 +5,17 @@
 
 import { motion } from 'motion/react';
 import { ISIRA_INFO } from '../data';
-import { Code, Zap, Users, Cpu } from 'lucide-react';
+import { Briefcase, Award, GraduationCap, School } from 'lucide-react';
 
 export default function About() {
   const stats = [
-    { label: 'HTML & CSS Experience', value: '3 Years', icon: <Code className="text-accent-orange" size={20} /> },
-    { label: 'JavaScript Experience', value: '1 Year', icon: <Zap className="text-accent-orange" size={20} /> },
-    { label: 'Laravel & PHP Experience', value: '6 Months', icon: <Cpu className="text-accent-orange" size={20} /> },
-    { label: 'Active Projects', value: 'In Progress', icon: <Users className="text-accent-orange" size={20} /> }
+    { value: '6 Months', label: 'Trainee Web Developer', icon: <Briefcase className="text-accent-orange" size={20} /> },
+    { value: '1st Dan Black Belt', label: 'Karate Coach', icon: <Award className="text-accent-orange" size={20} /> },
+    { value: 'Year 1 Completed', label: 'BEng (Hons) Software Engineering at IIT', icon: <GraduationCap className="text-accent-orange" size={20} /> },
+    { value: 'University of Canberra', label: 'July Intake', icon: <School className="text-accent-orange" size={20} /> }
   ];
 
-  const tools = [
-    'HTML5', 'CSS3', 'JavaScript', 'PHP', 'Laravel', 'Livewire', 'MySQL', 'Python', 'Java', 'Git'
-  ];
+
 
   return (
     <section id="about-section" className="w-full flex-grow max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-16">
@@ -43,21 +41,7 @@ export default function About() {
             From structuring complex database schemas to crafting responsive frontend layouts, my goal is to build secure, reliable, and smooth software systems that solve real-world problems.
           </p>
 
-          <div id="tech-stack-subsection" className="pt-6">
-            <h3 className="font-display font-bold text-lg text-brand-text mb-4">
-              Core Tech Stack & Skills:
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {tools.map((tool, idx) => (
-                <span 
-                  key={idx} 
-                  className="bg-brand-card border border-brand-thin-border hover:border-accent-orange px-4 py-2 rounded-xl text-brand-text/80 font-mono text-xs font-semibold shadow-sm transition-all duration-200"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
+
         </div>
 
         {/* Stats Column on the right (5 columns) */}
@@ -66,7 +50,7 @@ export default function About() {
             <motion.div
               key={idx}
               id={`stat-card-${idx}`}
-              className="bg-brand-card border-2 border-brand-border p-6 rounded-3xl shadow-sm text-left flex flex-col justify-between h-40 hover:shadow-md transition-shadow"
+              className="bg-brand-card border-2 border-brand-border p-6 rounded-3xl shadow-sm text-left flex flex-col justify-between min-h-[10rem] hover:shadow-md transition-shadow"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -76,12 +60,12 @@ export default function About() {
                 {stat.icon}
               </div>
               <div>
-                <dt className="font-mono text-[9px] tracking-wider uppercase text-brand-text/50 mb-1 leading-none">
-                  {stat.label}
-                </dt>
-                <dd className="font-display font-black text-xl text-brand-text leading-none">
+                <dd className="font-display font-black text-lg text-brand-text leading-tight mb-1">
                   {stat.value}
                 </dd>
+                <dt className="font-sans text-[11px] tracking-wide text-brand-text/55 leading-snug">
+                  {stat.label}
+                </dt>
               </div>
             </motion.div>
           ))}
