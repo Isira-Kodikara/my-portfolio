@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This project showcases my skills, expe
 
 ## 🚀 Live Demo
 
-[View the live portfolio here](https://my-portfolio-theta-seven-17.vercel.app/) *(Update this with your actual Vercel link once deployed)*
+[View the live portfolio here](https://isirakodikara.tech/)
 
 ## 🛠️ Built With
 
@@ -39,6 +39,6 @@ To run this project on your local machine:
 
 ## 📬 Contact Me
 
-- **Email:** kodikaraisira@gmail.com
+- **Email:** [kodikaraisira@gmail.com](mailto:kodikaraisira@gmail.com)
 - **LinkedIn:** [linkedin.com/in/isira-kodikara](https://www.linkedin.com/in/isira-kodikara)
 - **GitHub:** [github.com/isira-kodikara](https://github.com/isira-kodikara)
