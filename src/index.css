@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-color: #F9F9F7;
+  --text-color: #2D2B2B;
+  --border-color: #2D2B2B;
+  --card-bg: #FFFFFF;
+  --card-border: #2D2B2B; /* High-precision thick border as requested */
+  --thin-border: #EBE8DC;
+  --subtext-color: #5C5957;
+  
+  --accent-orange: #F49C36;
+  --accent-coral: #F05039;
+  --accent-darkgrey: #2D2B2B;
+  
+  --shadow-color: rgba(45, 43, 43, 0.05);
+  --shadow-elevation: 0 12px 30px rgba(45, 43, 43, 0.04);
+}
+
+:root.dark {
+  --bg-color: #121110;
+  --text-color: #F3F1ED;
+  --border-color: #F3F1ED;
+  --card-bg: #1B1A19;
+  --card-border: #F3F1ED;
+  --thin-border: #383533;
+  --subtext-color: #A3A09C;
+  
+  --accent-orange: #F49C36;
+  --accent-coral: #F05039;
+  --accent-darkgrey: #FAF8F5;
+  
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-elevation: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom palette matching CSS vars */
+  --color-brand-bg: var(--bg-color);
+  --color-brand-text: var(--text-color);
+  --color-brand-border: var(--border-color);
+  --color-brand-card: var(--card-bg);
+  --color-brand-thin-border: var(--thin-border);
+  --color-subtext: var(--subtext-color);
+  
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-coral: var(--accent-coral);
+  --color-accent-darkgrey: var(--accent-darkgrey);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-orange);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-coral);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-slow 25s linear infinite reverse;
+}
