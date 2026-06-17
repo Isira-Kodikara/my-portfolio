@@ -5,7 +5,7 @@
 
 import { motion } from 'motion/react';
 import { SKILL_GROUPS, ISIRA_INFO } from '../data';
-import { Code2, Server, Database, Wrench, Sparkles, BookOpen, ShieldAlert } from 'lucide-react';
+import { Code2, Server, Database, Wrench, Sparkles, BookOpen } from 'lucide-react';
 
 export default function Skills() {
   const containerVariants = {
@@ -109,20 +109,7 @@ export default function Skills() {
         })}
       </motion.div>
 
-      {/* Focus & Synergy callout */}
-      <div id="skills-synergy-banner" className="mt-16 bg-brand-card border-2 border-brand-border p-8 rounded-3xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
-        <div className="w-16 h-16 rounded-full bg-brand-bg border border-brand-thin-border text-accent-orange flex items-center justify-center shrink-0">
-          <ShieldAlert size={28} className="animate-bounce" />
-        </div>
-        <div className="text-left">
-          <h3 className="font-display font-black text-xl text-brand-text mb-1">
-            Frontend × Backend Synergy
-          </h3>
-          <p className="font-sans text-sm text-brand-text/75 leading-relaxed">
-            By combining scalable user interfaces with reliable, type-safe API servers, I maintain a continuous full-stack workflow. High standards in component modularity and API design ensure solid, secure solutions for production systems.
-          </p>
-        </div>
-      </div>
+
 
     </section>
   );

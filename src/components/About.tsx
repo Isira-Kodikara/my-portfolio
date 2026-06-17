@@ -5,7 +5,7 @@
 
 import { motion } from 'motion/react';
 import { ISIRA_INFO } from '../data';
-import { Briefcase, Award, GraduationCap, School } from 'lucide-react';
+import { Briefcase, Award, GraduationCap, School, Download } from 'lucide-react';
 
 export default function About() {
   const stats = [
@@ -41,6 +41,20 @@ export default function About() {
             From structuring complex database schemas to crafting responsive frontend layouts, my goal is to build secure, reliable, and smooth software systems that solve real-world problems.
           </p>
 
+          <motion.a
+            id="download-cv-btn"
+            href="/Isira_CV_SEEK.pdf"
+            download
+            className="mt-4 inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-accent-orange text-white font-display font-bold text-sm tracking-wide shadow-lg shadow-accent-orange/25 hover:shadow-xl hover:shadow-accent-orange/35 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5, type: 'spring', stiffness: 200 }}
+            whileHover={{ y: -2 }}
+          >
+            <Download size={16} strokeWidth={2.5} />
+            Download CV
+          </motion.a>
 
         </div>
 
