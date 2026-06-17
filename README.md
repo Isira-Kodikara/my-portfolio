@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Isira Kodikara | Creative Full-Stack Developer Portfolio
 
-# Run and deploy your AI Studio app
+Welcome to my personal portfolio website! This project showcases my skills, experience, and the projects I've built as a software engineer specializing in PHP, Laravel, Livewire, and modern web technologies.
 
-This contains everything you need to run your app locally.
+## 🚀 Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/bc9c4f27-f030-4466-8c83-4edba1a7fa1b
+[View the live portfolio here](https://my-portfolio-theta-seven-17.vercel.app/) *(Update this with your actual Vercel link once deployed)*
 
-## Run Locally
+## 🛠️ Built With
 
-**Prerequisites:**  Node.js
+- **Frontend:** React, Vite, TypeScript
+- **Styling:** Vanilla CSS / Tailwind utilities
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 
+## 💻 Getting Started Locally
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+To run this project on your local machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Isira-Kodikara/my-portfolio.git
+   cd my-portfolio
+   ```
+
+2. **Install dependencies:**
+   Make sure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **View in Browser:**
+   Open `http://localhost:5173` in your web browser to see the site.
+
+## 📬 Contact Me
+
+- **Email:** kodikaraisira@gmail.com
+- **LinkedIn:** [linkedin.com/in/isira-kodikara](https://www.linkedin.com/in/isira-kodikara)
+- **GitHub:** [github.com/isira-kodikara](https://github.com/isira-kodikara)
