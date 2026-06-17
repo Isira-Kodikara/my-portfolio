@@ -7,30 +7,42 @@ import { SkillGroup, Work } from './types';
 
 export const SKILL_GROUPS: SkillGroup[] = [
   {
-    category: "Frontend Development",
+    category: "Frontend",
     skills: [
-      { name: "HTML5 & CSS3", level: 85 },
-      { name: "JavaScript (ES6+)", level: 65 },
-      { name: "Responsive & Accessible UI", level: 75 },
-      { name: "Tailwind CSS", level: 60 }
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" }
     ]
   },
   {
-    category: "Backend & Databases",
+    category: "Backend",
     skills: [
-      { name: "PHP", level: 70 },
-      { name: "Laravel Framework", level: 60 },
-      { name: "Livewire", level: 55 },
-      { name: "MySQL & Database Design", level: 65 }
+      { name: "PHP" },
+      { name: "Laravel" },
+      { name: "Livewire" }
     ]
   },
   {
-    category: "Tools & Emerging Skills",
+    category: "Database",
     skills: [
-      { name: "Git & Collaborative Workflows", level: 70 },
-      { name: "Python (Basics)", level: 40 },
-      { name: "Java (Basics)", level: 35 },
-      { name: "Terminal & Command Line", level: 75 }
+      { name: "MySQL" }
+    ]
+  },
+  {
+    category: "Tools",
+    skills: [
+      { name: "Git" },
+      { name: "GitHub" },
+      { name: "JetBrains IDEs" },
+      { name: "VS Code" },
+      { name: "Linux/Terminal" }
+    ]
+  },
+  {
+    category: "Additional Skills",
+    skills: [
+      { name: "Python" },
+      { name: "Java" }
     ]
   }
 ];

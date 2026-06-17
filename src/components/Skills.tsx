@@ -5,7 +5,7 @@
 
 import { motion } from 'motion/react';
 import { SKILL_GROUPS, ISIRA_INFO } from '../data';
-import { Award, Code2, BrainCircuit, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
+import { Code2, Server, Database, Wrench, Sparkles, BookOpen, ShieldAlert } from 'lucide-react';
 
 export default function Skills() {
   const containerVariants = {
@@ -24,13 +24,13 @@ export default function Skills() {
   };
 
   const getCategoryIcon = (category: string) => {
-    if (category.toLowerCase().includes('full-stack')) {
-      return <Code2 className="text-accent-orange" size={20} />;
-    }
-    if (category.toLowerCase().includes('martial')) {
-      return <Award className="text-accent-coral" size={20} />;
-    }
-    return <BrainCircuit className="text-brand-text/80" size={20} />;
+    const lower = category.toLowerCase();
+    if (lower.includes('frontend')) return <Code2 className="text-accent-orange" size={20} />;
+    if (lower.includes('backend')) return <Server className="text-accent-orange" size={20} />;
+    if (lower.includes('database')) return <Database className="text-accent-orange" size={20} />;
+    if (lower.includes('tools')) return <Wrench className="text-accent-orange" size={20} />;
+    if (lower.includes('additional')) return <Sparkles className="text-accent-orange" size={20} />;
+    return <Code2 className="text-brand-text/80" size={20} />;
   };
 
   return (
@@ -53,7 +53,7 @@ export default function Skills() {
       {/* Grid structure for Skill Categories */}
       <motion.div 
         id="skills-group-grid" 
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="show"
@@ -79,32 +79,19 @@ export default function Skills() {
                   </h3>
                 </div>
 
-                {/* List of Skills within category */}
-                <div className="space-y-6">
+                {/* Skills as tags/chips */}
+                <div className="flex flex-wrap gap-3">
                   {group.skills.map((skill, sIdx) => (
-                    <div key={sIdx} id={`skill-item-${idx}-${sIdx}`} className="space-y-2 text-left">
-                      <div className="flex items-center justify-between text-xs font-semibold text-brand-text">
-                        <span className="font-display tracking-tight hover:text-accent-orange transition-colors">
-                          {skill.name}
-                        </span>
-                        <span className="font-mono text-[10px] text-brand-text/60">
-                          {skill.level}%
-                        </span>
-                      </div>
-
-                      {/* Bar Gauge representation with offset animation */}
-                      <div className="w-full h-2 bg-brand-bg rounded-full border border-brand-thin-border overflow-hidden p-[0.5px]">
-                        <motion.div 
-                          className="h-full rounded-full"
-                          style={{ 
-                            backgroundColor: 'var(--accent-orange)' 
-                          }}
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ delay: 0.2 + (sIdx * 0.1), duration: 0.8, ease: 'easeOut' }}
-                        />
-                      </div>
-                    </div>
+                    <motion.span
+                      key={sIdx}
+                      id={`skill-item-${idx}-${sIdx}`}
+                      className="inline-flex items-center px-4 py-2 rounded-full bg-brand-bg border border-brand-thin-border text-sm font-semibold font-display text-brand-text tracking-tight hover:border-accent-orange/50 hover:text-accent-orange transition-colors cursor-default"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 + (sIdx * 0.08), duration: 0.4, ease: 'easeOut' }}
+                    >
+                      {skill.name}
+                    </motion.span>
                   ))}
                 </div>
               </div>
@@ -140,3 +127,4 @@ export default function Skills() {
     </section>
   );
 }
+

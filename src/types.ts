@@ -13,7 +13,7 @@ export enum Tab {
 export interface SkillGroup {
   category: string;
   isMartial?: boolean;
-  skills: { name: string; level: number; iconName?: string }[];
+  skills: { name: string; level?: number; iconName?: string }[];
 }
 
 export interface Work {
